@@ -7,13 +7,25 @@
     <depends>com.intellij.modules.platform</depends>
     <depends>IdeaVIM</depends>
 
+    <!--
     <extensions defaultExtensionNs="com.intellij">
         <applicationService serviceImplementation="com.github.rittelle.warpspeed.services.MyApplicationService"/>
         <projectService serviceImplementation="com.github.rittelle.warpspeed.services.MyProjectService"/>
     </extensions>
+    -->
 
+    <extensions defaultExtensionNs="IdeaVIM">
+        <vimExtension implementation="WarpSpeedExtension" name="warpspeed">
+            <aliases>
+                <!-- <alias name="vim-warpspeed" /> -->
+            </aliases>
+        </vimExtension>
+    </extensions>
+
+    <!--
     <applicationListeners>
         <listener class="com.github.rittelle.warpspeed.listeners.MyProjectManagerListener"
                   topic="com.intellij.openapi.project.ProjectManagerListener"/>
     </applicationListeners>
+    -->
 </idea-plugin>
